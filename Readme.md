@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
-* Студент: [Arthur Litovko](https://up.htmlacademy.ru/htmlcss/27/user/6927).
-* Наставник: `Неизвестно`.
+- Студент: [Arthur Litovko](https://up.htmlacademy.ru/htmlcss/27/user/6927).
+- Наставник: [Дарья Воздраганова](https://htmlacademy.ru/profile/id1227143).
 
 ---
 
