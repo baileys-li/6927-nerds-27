@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Магазин готовых шаблонов</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+  </head>
+  <body>
+    <header class="page-header"><a class="page-header__logo"><img src="/img/logo.svg" alt="Логотип Нёрдс" width="160" height="65"/></a>
+      <nav class="main-nav">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item"><a href="/studio.html">Студия</a></li>
+          <li class="site-list__item"><a href="/clients.html">Клиенты</a></li>
+          <li class="site-list__item"><a href="/catalog.html">Магазин</a></li>
+          <li class="site-list__item"><a href="/shop.html">Контакты</a></li>
+        </ul>
+        <ul class="main-nav__list user-list">
+          <li class="user-list__item"><a href="/cart.html">Корзина</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-main">
+      <h1 class="visually-hidden">Веб-студия «Нёрдс»</h1>
+      <section class="catalog">
+        <h2 class="catalog__title">Магазин готовых шаблонов</h2>
+        <form class="catalog__filters filters" action="https://echo.htmlacademy.ru" method="get">
+          <fieldset class="catalog__filter filters__cost">
+            <legend class="filters__title">Стоимость:</legend>
+            <input type="range" min="0" max="20 000" value="15 000"/>
+            <label>От
+              <input type="number" value="0"/>
+            </label>
+            <label>До
+              <input type="number" value="15000"/>
+            </label>
+          </fieldset>
+          <fieldset class="catalog__filter filters__grid">
+            <legend class="filters__title">Сетка:</legend>
+            <ul class="filters__grid-list">
+              <li>
+                <input class="filters-grid-radio" type="radio" name="grid" id="filters-grid-radio--adaptive" checked="checked"/>
+                <label class="filters-grid-label" for="filters-grid-radio--adaptive">Адаптивная</label>
+              </li>
+              <li>
+                <input class="filters-grid-radio" type="radio" name="grid" id="filters-grid-radio--fixed"/>
+                <label class="filters-grid-label" for="filters-grid-radio--fixed">Фиксированная</label>
+              </li>
+              <li>
+                <input class="filters-grid-radio" type="radio" name="grid" id="filters-grid-radio--gum"/>
+                <label class="filters-grid-label" for="filters-grid-radio--gum">Резиновая</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="catalog__filter filters__features">
+            <legend class="filters__title">Особенности:</legend>
+            <ul>
+              <li>
+                <input class="filters-feature-checkbox" type="checkbox" name="feature" id="filters-feature-checkbox--slider" checked="checked"/>
+                <label class="filters-feature-label" for="filters-feature-checkbox--slider">Слайдер</label>
+              </li>
+              <li>
+                <input class="filters-feature-checkbox" type="checkbox" name="feature" id="filters-feature-checkbox--advantages"/>
+                <label class="filters-feature-label" for="filters-feature-checkbox--advantages">Блок преимуществ</label>
+              </li>
+              <li>
+                <input class="filters-feature-checkbox" type="checkbox" name="feature" id="filters-feature-checkbox--news" checked="checked"/>
+                <label class="filters-feature-label" for="filters-feature-checkbox--news">Новости</label>
+              </li>
+              <li>
+                <input class="filters-feature-checkbox" type="checkbox" name="feature" id="filters-feature-checkbox--gallery"/>
+                <label class="filters-feature-label" for="filters-feature-checkbox--gallery">Галерея</label>
+              </li>
+              <li>
+                <input class="filters-feature-checkbox" type="checkbox" name="feature" id="filters-feature-checkbox--cart"/>
+                <label class="filters-feature-label" for="filters-feature-checkbox--cart">Корзина</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button class="button" type="submit">Показать</button>
+        </form>
+        <form class="catalog__sorts filters" action="https://echo.htmlacademy.ru" method="get">
+          <fieldset class="catalog__filter filters__sorts">
+            <legend class="filters__title">Сортировать:</legend>
+            <ul>
+              <li>
+                <input class="filters-sorting-type-radio" type="radio" name="sorting-type" id="filters-sorting-type-radio--price" checked="checked"/>
+                <label class="filters-sorting-type-label" for="filters-sorting-type-radio--price">По цене</label>
+              </li>
+              <li>
+                <input class="filters-sorting-type-radio" type="radio" name="sorting-type" id="filters-sorting-type-radio--type"/>
+                <label class="filters-sorting-type-label" for="filters-sorting-type-radio--type">По типу</label>
+              </li>
+              <li>
+                <input class="filters-sorting-type-radio" type="radio" name="sorting-type" id="filters-sorting-type-radio--name"/>
+                <label class="filters-sorting-type-label" for="filters-sorting-type-radio--name">По названию</label>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <input class="filters-sorting-order-radio" type="radio" name="sorting-order" id="filters-sorting-order-radio--down" checked="checked"/>
+                <label class="filters-sorting-order-label" for="filters-sorting-order-radio--down">По убыванию</label>
+              </li>
+              <li>
+                <input class="filters-sorting-order-radio" type="radio" name="sorting-order" id="filters-sorting-order-radio--up"/>
+                <label class="filters-sorting-order-label" for="filters-sorting-order-radio--up">По возрастанию</label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="catalog__item">
+            <figure><img src="/content/templates/sedona.png" alt="Скриншот шаблона Sedona" width="360" height="576"/>
+              <figcaption class="catalog__item-info">
+                <h4 class="catalog__item-title">Sedona</h4>
+                <p class="catalog__item-description">Информационный сайт для туристов</p><a class="button" href="#">9 900₽</a>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+      <ul class="catalog__pagination">
+        <li><a href="#">Предыдущая</a></li>
+        <ol>
+          <li><a href="/1">Перейти</a></li>
+          <li><a href="/2">Перейти</a></li>
+          <li><a href="/3">Перейти</a></li>
+        </ol>
+        <li><a href="#">Следующая</a></li>
+      </ul>
+      <section class="contacts">
+        <article class="contacts__card">
+          <h2 class="visually-hidden">Наш адрес</h2><b class="contacts__name">NЁRDS DESIGN STUDIO</b>
+          <p class="contacts__address">
+            191186, Санкт-Петербург, <br>ул. Б. Конюшенная, д. 19/8</p>
+          <p class="contacts__tel">тел.<a href="tel: +78122757575">+7 (812) 275-75-75</a></p>
+          <button class="button">Напишите нам</button>
+        </article><img src="/content/map.png" alt="Скриншот карты" width="1440" height="416"/>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <ul class="page-footer__socials socials">
+        <li class="socials__item"><a class="social__link social__link--vk" href="#">Мы во «Вконтакте»</a></li>
+        <li class="socials__item"><a class="social__link social__link--fb" href="#">Мы во Facebook</a></li>
+        <li class="socials__item"><a class="social__link social__link--insta" href="#">Мы во Instagram</a></li>
+      </ul>
+      <p class="page-footer__discount discount"><strong class="discount__slogan">Давайте дружить, это выгодно!</strong> Скидка 10% для друзей из социальных сетей.</p>
+    </footer>
+  </body>
+</html>
