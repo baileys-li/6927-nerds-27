@@ -23,7 +23,7 @@
       <path d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z" />
     </symbol>
     <symbol id="icon-close" viewBox="0 0 21 21">
-      <path fill="#FB565A"
+      <path
         d="M13.328 10.5l7.371-7.371a1.003 1.003 0 0 0 0-1.414L19.285.3a1.003 1.003 0 0 0-1.414 0L10.5 7.672 3.129.301a1.003 1.003 0 0 0-1.414 0L.301 1.715a1.003 1.003 0 0 0 0 1.414L7.672 10.5.301 17.871a1.003 1.003 0 0 0 0 1.414l1.415 1.414a1.003 1.003 0 0 0 1.414 0l7.371-7.371 7.371 7.371a1.003 1.003 0 0 0 1.414 0l1.414-1.414a1.003 1.003 0 0 0 0-1.414L13.328 10.5z" />
     </symbol>
     <symbol id="icon-fb" viewBox="0 0 12 22">
@@ -236,23 +236,53 @@
     </section>
   </main>
   <footer class="page-footer">
+    <h2 class="visually-hidden">Мы с социальных сетях</h2>
     <ul class="page-footer__socials socials">
       <li class="socials__item"><a class="social__link social__link--vk" href="#">
-          <svg class="icon" role="img" focusable="false" aria-hidden="true" width="26" height="15">
-            <use xlink:href="#icon-vk"> </use>
-          </svg><span>Мы во «Вконтакте»</span></a></li>
+          <svg class="icon" role="img" focusable="false" aria-labelledby="icon-vk__title" width="26" height="15">
+            <title id="icon-vk__title">Мы во «Вконтакте»</title>
+            <use xlink:href="#icon-vk"></use>
+          </svg></a></li>
       <li class="socials__item"><a class="social__link social__link--fb" href="#">
-          <svg class="icon" role="img" focusable="false" aria-hidden="true" width="12" height="22">
-            <use xlink:href="#icon-fb"> </use>
-          </svg><span>Мы во Facebook</span></a></li>
+          <svg class="icon" role="img" focusable="false" aria-labelledby="icon-fb__title" width="12" height="22">
+            <title id="icon-fb__title">Мы во Facebook</title>
+            <use xlink:href="#icon-fb"></use>
+          </svg></a></li>
       <li class="socials__item"><a class="social__link social__link--insta" href="#">
-          <svg class="icon" role="img" focusable="false" aria-hidden="true" width="21" height="21">
-            <use xlink:href="#icon-insta"> </use>
-          </svg><span>Мы в Instagram</span></a></li>
+          <svg class="icon" role="img" focusable="false" aria-labelledby="icon-insta__title" width="21" height="21">
+            <title id="icon-insta__title">Мы в Instagram</title>
+            <use xlink:href="#icon-insta"></use>
+          </svg></a></li>
     </ul>
     <p class="page-footer__discount discount"><strong class="discount__slogan">Давайте дружить, это выгодно!</strong>
       Скидка 10% для друзей из социальных сетей.</p>
   </footer>
+  <section class="contact-us modal">
+    <h2>Напишите нам</h2>
+    <button class="modal-close" type="button">
+      <svg class="icon" role="button" focusable="false" width="21" height="21" aria-labelledby="modal-close">
+        <title id="modal-close">Закрыть форму</title>
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </button>
+    <form class="contact-us__form" action="https://echo.htmlacademy.ru" method="post">
+      <p class="contact-us__wrapper">
+        <label class="contact-us__label" for="contact-us__input--name">Ваше имя:</label>
+        <input class="contact-us__input" type="text" placeholder="Имя Фамилия" name="name"
+          id="contact-us__input--name" />
+      </p>
+      <p class="contact-us__wrapper">
+        <label class="contact-us__label" for="contact-us__input--email">Ваш e-mail:</label>
+        <input class="contact-us__input" type="email" placeholder="email@example.com" name="email"
+          id="contact-us__input--email" />
+      </p>
+      <p class="contact-us__wrapper">
+        <label class="contact-us__label" for="contact-us__input--text">Текст письма:</label>
+        <textarea class="contact-us__input" placeholder="В свободной форме" id="contact-us__input--text"></textarea>
+      </p>
+    </form>
+    <button class="contact-us__submit button" type="submit">Отправить</button>
+  </section>
 </body>
 
 </html>
