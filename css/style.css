@@ -1,10 +1,31 @@
 @charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
   font-size: 16px;
   line-height: 1.5;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   color: #283136;
   background-color: #ffffff;
+}
+
+a:not(.button) {
+  color: #000000;
+  text-decoration: none;
+}
+a:not(.button):hover, a:not(.button):focus {
+  color: #fb565a;
+}
+a:not(.button):active {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -27,8 +48,6 @@ input[type=radio].visually-hidden {
   position: relative;
   top: 0.125em;
   flex-shrink: 0;
-  width: 1em;
-  height: 1em;
   transition: fill 0.3s;
   fill: currentColor;
 }
@@ -39,7 +58,8 @@ input[type=radio].visually-hidden {
 }
 
 .title,
-.subtitle {
+.subtitle,
+.title--small {
   font-weight: 500;
   line-height: 1;
   color: #000000;
@@ -53,12 +73,18 @@ input[type=radio].visually-hidden {
   font-size: 45px;
 }
 
+.title--small {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  min-height: 50px;
+  padding: 13px 20px;
+  cursor: pointer;
   text-align: center;
   color: #ffffff;
   text-transform: uppercase;
@@ -75,6 +101,38 @@ input[type=radio].visually-hidden {
   background-color: #d7373b;
   box-shadow: inset 0 3px 0 0 rgba(0, 1, 1, 0.1);
   color: rgba(255, 255, 255, 0.5);
+}
+
+.button--green {
+  background-color: #00ca74;
+}
+.button--green:hover {
+  background-color: #00bc6c;
+}
+.button--green:active, .button--green:focus {
+  background-color: #00aa62;
+}
+
+.button--yellow {
+  background-color: #efc84a;
+}
+.button--yellow:hover {
+  background-color: #eab534;
+}
+.button--yellow:active, .button--yellow:focus {
+  background-color: #e5a722;
+}
+
+.button--grey {
+  color: #000000;
+  background-color: #eeeeee;
+}
+.button--grey:hover {
+  background-color: #dfdfdf;
+}
+.button--grey:active, .button--grey:focus {
+  background-color: #d5d5d5;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .page-header {
@@ -120,24 +178,6 @@ input[type=radio].visually-hidden {
 .user-list__item a:not([href]) {
   padding-bottom: 12px;
   border-bottom: 2px solid #fb565a;
-}
-.site-list__item a, .site-list__item a,
-.user-list__item a,
-.user-list__item a {
-  color: #000000;
-  text-decoration: none;
-}
-.site-list__item a:hover, .site-list__item a:focus, .site-list__item a:hover, .site-list__item a:focus,
-.user-list__item a:hover,
-.user-list__item a:focus,
-.user-list__item a:hover,
-.user-list__item a:focus {
-  color: #fb565a;
-}
-.site-list__item a:active, .site-list__item a:active,
-.user-list__item a:active,
-.user-list__item a:active {
-  color: rgba(0, 0, 0, 0.3);
 }
 
 .user-list__item .icon {
@@ -213,23 +253,14 @@ input[type=radio].visually-hidden {
 .services__item--website .services__pic {
   background-color: #fb565a;
 }
-.services__item--iphones .services__pic, .services__item--iphones .services__button {
+.services__item--iphones .services__pic {
   background-color: #00ca74;
 }
-.services__item--iphones .services__button:hover {
-  background-color: #00bc6c;
-}
-.services__item--iphones .services__button:focus, .services__item--iphones .services__button:active {
-  background-color: #00aa62;
-}
-.services__item--presentation .services__pic, .services__item--presentation .services__button {
+.services__item--presentation .services__pic {
   background-color: #efc84a;
 }
-.services__item--presentation .services__button:hover {
-  background-color: #eab534;
-}
-.services__item--presentation .services__button:focus, .services__item--presentation .services__button:active {
-  background-color: #e5a722;
+.services__item .button {
+  width: 160px;
 }
 .services__pic {
   display: flex;
@@ -366,20 +397,11 @@ input[type=radio].visually-hidden {
   display: block;
   margin-bottom: 32px;
   font-weight: bold;
-  font-size: 18px;
   line-height: 1.67;
-  text-transform: uppercase;
 }
 .contacts__card-text {
   line-height: 1.13;
   color: #666666;
-}
-.contacts__card-text a {
-  color: inherit;
-  text-decoration: none;
-}
-.contacts__card-text a:hover, .contacts__card-text a:focus {
-  color: #fb565a;
 }
 .contacts__button {
   width: 100%;
@@ -405,6 +427,9 @@ input[type=radio].visually-hidden {
   width: 260px;
   margin-right: 140px;
 }
+.catalog__filters .button {
+  width: 100%;
+}
 .catalog__main {
   width: 760px;
 }
@@ -419,17 +444,116 @@ input[type=radio].visually-hidden {
   padding: 0;
   list-style: none;
 }
+.catalog__pagination, .catalog__pages {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+.catalog__pagination li, .catalog__pages li {
+  margin-right: 11px;
+}
 
 .filter {
   border: none;
+  margin: 0 0 32px;
+  padding: 0;
 }
 .filter__title {
   font-size: 18px;
-  font-weight: bold;
   line-height: 1.67;
   letter-spacing: 0.18px;
-  color: #000000;
+  margin-bottom: 27px;
+}
+.filter__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.filter__label {
+  margin-bottom: 16px;
+  display: flex;
+  cursor: pointer;
+}
+.filter__label::before {
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.filter__label--checkbox::before {
+  width: 27px;
+  content: url("../img/check-off.svg");
+}
+.filter__label--radio::before {
+  content: url("../img/radio-off.svg");
+}
+.filter__label:hover::before {
+  opacity: 1;
+}
+.filter__choice:checked ~ .filter__label--checkbox::before {
+  content: url("../img/check-on.svg");
+}
+.filter__choice:checked ~ .filter__label--radio::before {
+  content: url("../img/radio-on.svg");
+}
+.filter__choice:disabled ~ .filter__label {
+  cursor: auto;
+  opacity: 0.3;
+}
+.filter__choice {
+  display: none;
+}
+.filter__sort {
+  display: flex;
+}
+
+.sort {
+  display: flex;
+  margin-bottom: 55px;
+  align-items: flex-start;
+}
+.sort__title {
+  margin: 0;
+}
+.sort__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
   text-transform: uppercase;
+}
+.sort__list--order .sort__label {
+  font-size: 0;
+}
+.sort__list--order .sort__label::before {
+  font-size: 11px;
+}
+.sort__list--type {
+  margin-left: auto;
+}
+.sort__list--type .sort__label {
+  margin-right: 26px;
+}
+.sort__choice {
+  display: none;
+}
+.sort__choice:checked ~ .sort__label {
+  color: #000000;
+}
+.sort__label {
+  color: rgba(0, 0, 0, 0.5);
+}
+.sort__label:hover, .sort__label:focus {
+  color: #000;
+}
+.sort__label--down {
+  margin-right: 12px;
+}
+.sort__label--down::before {
+  content: "▼";
+}
+.sort__label--up::before {
+  content: "▲";
 }
 
 .template {
