@@ -561,6 +561,17 @@ input[type=radio].visually-hidden {
   border: 2px solid #d7dcde;
   background-color: #ffffff;
 }
+.contact-us__input:hover {
+  border-color: #b4b9bb;
+}
+.contact-us__input:focus {
+  border-color: #000000;
+  outline: none;
+}
+.contact-us__input:invalid {
+  color: #e74246;
+  border-color: #e74246;
+}
 .contact-us__submit {
   width: 260px;
 }
