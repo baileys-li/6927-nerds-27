@@ -155,7 +155,7 @@ input[type=radio].visually-hidden {
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 34px;
+  margin: 34px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -165,7 +165,7 @@ input[type=radio].visually-hidden {
   margin-right: 48px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.88;
+  line-height: 1;
   text-transform: uppercase;
 }
 .site-list__item:last-child, .site-list__item:last-child,
