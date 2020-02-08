@@ -90,6 +90,7 @@ input[type=radio].visually-hidden {
   text-transform: uppercase;
   text-decoration: none;
   box-sizing: border-box;
+  font-weight: 500;
   background-color: #fb565a;
   border-radius: 3px;
   border: none;
@@ -460,15 +461,38 @@ input[type=radio].visually-hidden {
   padding: 0;
   list-style: none;
 }
-.catalog__pagination, .catalog__pages {
+
+.pagination, .pagination__pages {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
   justify-content: center;
 }
-.catalog__pagination li, .catalog__pages li {
+.pagination li, .pagination__pages li {
   margin-right: 11px;
+}
+.pagination .button {
+  min-height: 50px;
+}
+.pagination__pages {
+  counter-reset: page;
+}
+.pagination__page {
+  font-size: 0;
+}
+.pagination__page:not([href]) {
+  background-color: #fff;
+  box-shadow: inset 0px 0px 0 3px #eeeeee;
+  cursor: unset;
+}
+.pagination__page::before {
+  font-size: 16px;
+  counter-increment: page;
+  content: counter(page);
+}
+.pagination__prev .button, .pagination__next .button {
+  width: 260px;
 }
 
 .filter {
