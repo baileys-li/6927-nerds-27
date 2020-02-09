@@ -234,10 +234,10 @@ input[type=radio].visually-hidden {
   font-size: 0;
   list-style: none;
 }
-.slider__toggle:focus ~ .slider__label::before {
+.slider__toggle:focus + .slider__label::before {
   background-color: #fb565a;
 }
-.slider__toggle:checked ~ .slider__label::before {
+.slider__toggle:checked + .slider__label::before {
   box-shadow: inset 0 0 0 5px #ffffff, inset 0 0 0 7px #c1c1c1;
 }
 .slider__label {
