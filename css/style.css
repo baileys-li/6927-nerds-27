@@ -449,7 +449,7 @@ input[type=radio].visually-hidden {
   display: block;
   max-width: 80ch;
   margin: 0 0 60px;
-  padding: 82px 100px 116px;
+  padding: 64px 100px 116px;
   text-align: center;
   background-color: #eeeeee;
 }
@@ -532,6 +532,8 @@ input[type=radio].visually-hidden {
   margin-bottom: 16px;
   display: flex;
   cursor: pointer;
+  align-items: center;
+  line-height: 1;
 }
 .filter__label::before {
   margin-right: 10px;
@@ -547,18 +549,18 @@ input[type=radio].visually-hidden {
 .filter__label:hover::before {
   opacity: 1;
 }
-.filter__choice:checked ~ .filter__label--checkbox::before {
+.filter__choice:checked + .filter__label--checkbox::before {
   content: url("../img/check-on.svg");
 }
-.filter__choice:checked ~ .filter__label--radio::before {
+.filter__choice:checked + .filter__label--radio::before {
   content: url("../img/radio-on.svg");
 }
-.filter__choice:disabled ~ .filter__label {
+.filter__choice:disabled + .filter__label {
   cursor: auto;
   opacity: 0.3;
 }
-.filter__choice {
-  display: none;
+.filter__choice:focus + .filter__label {
+  outline: 2px solid #fb565a;
 }
 .filter__sort {
   display: flex;
@@ -591,11 +593,11 @@ input[type=radio].visually-hidden {
 .sort__list--type .sort__label {
   margin-right: 26px;
 }
-.sort__choice {
-  display: none;
-}
-.sort__choice:checked ~ .sort__label {
+.sort__choice:checked + .sort__label {
   color: #000000;
+}
+.sort__choice:focus + .sort__label {
+  outline: 1px solid #fb565a;
 }
 .sort__label {
   color: rgba(0, 0, 0, 0.5);
