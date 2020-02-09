@@ -194,8 +194,24 @@ input[type=radio].visually-hidden {
   position: relative;
 }
 .slider__list {
+  display: flex;
   padding: 0;
   list-style: none;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.slider__list::-webkit-scrollbar {
+  display: none;
+}
+.slider__item {
+  scroll-snap-align: start;
+  width: 100%;
+  flex-shrink: 0;
+  margin-right: 50px;
 }
 .slider__content {
   display: flex;
@@ -209,6 +225,7 @@ input[type=radio].visually-hidden {
 }
 .slider__image {
   order: 1;
+  margin-top: auto;
   margin-left: auto;
 }
 .slider__slogan {
