@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -597,7 +596,7 @@ input[type=radio].visually-hidden {
   color: #000000;
 }
 .sort__choice:focus + .sort__label {
-  outline: 1px solid #fb565a;
+  color: #fb565a;
 }
 .sort__label {
   color: rgba(0, 0, 0, 0.5);
@@ -608,12 +607,6 @@ input[type=radio].visually-hidden {
 .sort__label--down {
   margin-right: 12px;
 }
-.sort__label--down::before {
-  content: "▼";
-}
-.sort__label--up::before {
-  content: "▲";
-}
 
 .template {
   position: relative;
@@ -623,28 +616,38 @@ input[type=radio].visually-hidden {
   margin: 0 0 33px;
 }
 .template::before {
-  content: "⋯";
+  content: url(../img/browser-buttons.svg);
   height: 40px;
-  padding-left: 20px;
-  font-size: 100px;
-  line-height: 0.3;
-  color: #ffffff;
+  padding-left: 18px;
+  display: flex;
+  align-items: center;
   background-color: #eeeeee;
-  border-radius: 3px 3px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.template:hover, .template:focus {
+  box-shadow: 0px 6px 15px 0 rgba(0, 1, 1, 0.25);
+  outline: none;
+}
+.template:hover::before, .template:focus::before {
+  background-color: #4D4D4D;
+}
+.template:hover .template__info, .template:focus .template__info {
+  display: block;
 }
 .template__info {
   position: absolute;
   bottom: 0;
+  display: none;
   box-sizing: border-box;
   width: 100%;
-  padding: 30px 80px 42px;
+  padding: 30px 60px 42px;
   background-color: #eeeeee;
 }
 .template__title {
   margin: 0 0 25px;
   font-weight: bold;
   font-size: 18px;
-  line-height: 1.67;
+  line-height: 1;
   text-align: center;
   text-transform: uppercase;
 }
@@ -654,7 +657,17 @@ input[type=radio].visually-hidden {
   color: #666666;
 }
 .template .button {
+  display: block;
   width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.price {
+  background-color: #eeeeee;
+  padding: 29px 21px;
+  margin: 0;
+  border-radius: 5px;
 }
 
 .page-footer {
