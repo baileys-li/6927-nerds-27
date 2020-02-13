@@ -84,15 +84,33 @@
         <form class="catalog__filters" action="https://echo.htmlacademy.ru" method="get">
           <fieldset class="filter filters--cost">
             <legend class="filter__title title--small"> Стоимость:</legend>
-            <p class="price">
-              <input class="price__range" type="range" min="0" max="20 000" value="15 000" />
-            </p>
-            <label>От
-              <input type="number" value="0" />
-            </label>
-            <label>До
-              <input type="number" value="15000" />
-            </label>
+            <div class="price__range">
+              <svg height="22" width="222" viewBox="0 0 222 22" xmlns="http://www.w3.org/2000/svg">
+                <line stroke-width="2" x1="10" y1="10" x2="212" y2="10" stroke="#D7DCDE"></line>
+                <line stroke-width="2" x1="10" y1="10" x2="152" y2="10" stroke="#00CA74"></line>
+                <symbol viewBox="0 0 20 22" id="price__slider">
+                  <circle cx="10" cy="12" r="10" fill="rgba(171, 171, 171, 0.3)"></circle>
+                  <circle cx="10" cy="10" r="10" fill="white"></circle>
+                  <circle cx="10" cy="10" r="2" fill="#ABABAB"></circle>
+                </symbol>
+                <g role="button" aria-labelledby="price__title--min" tabindex="0" id="price__slider--min">
+                  <title id="price__title--min">Минимальная цена</title>
+                  <use xlink:href="#price__slider" x="0" y="0" width="20" height="22"></use>
+                </g>
+                <g role="button" aria-labelledby="price__title--max" tabindex="0" id="price__slider--max">
+                  <title id="price__title--max">Максимальная цена</title>
+                  <use xlink:href="#price__slider" x="142" y="0" width="20" height="22"></use>
+                </g>
+              </svg>
+            </div>
+            <div class="price__labels">
+              <label class="price__label">От
+                <input class="price__number" type="number" value="0" />
+              </label>
+              <label class="price__label">До
+                <input class="price__number" type="number" value="15000" />
+              </label>
+            </div>
           </fieldset>
           <fieldset class="filter filters--grid">
             <legend class="filter__title title--small"> Сетка:</legend>
