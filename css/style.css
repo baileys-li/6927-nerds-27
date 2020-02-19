@@ -609,6 +609,9 @@ input[type=radio].visually-hidden {
 .sort__label--down {
   margin-right: 12px;
 }
+.sort__label--up svg {
+  transform: rotate(180deg);
+}
 
 .template {
   position: relative;
