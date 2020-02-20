@@ -288,16 +288,24 @@ input[type=radio].visually-hidden {
 .services__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .services__item {
-  flex-basis: 300px;
-  margin-bottom: 60px;
   display: flex;
+  flex: 1 0 300px;
   flex-direction: column;
+  max-width: 50%;
+  margin-right: 130px;
+  margin-bottom: 60px;
+}
+.services__item:nth-child(3n) {
+  margin-right: 0;
+}
+.services__item:last-child {
+  margin-right: 0;
 }
 .services__item--website .services__pic {
   background-color: #fb565a;
@@ -324,8 +332,8 @@ input[type=radio].visually-hidden {
   font-weight: bold;
   font-size: 24px;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #000000;
+  text-transform: uppercase;
 }
 .services__description {
   margin: 0 0 35px;
