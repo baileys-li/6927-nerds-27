@@ -328,21 +328,22 @@
     <form class="contact-us__form" action="https://echo.htmlacademy.ru" method="post">
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__input--name">Ваше имя:</label>
-        <input class="contact-us__input" type="text" placeholder="Имя Фамилия" name="name"
-          id="contact-us__input--name" />
+        <input class="contact-us__input" type="text" placeholder="Имя Фамилия" name="name" id="contact-us__name" />
       </p>
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__input--email" required="required">Ваш e-mail:</label>
         <input class="contact-us__input" type="email" placeholder="email@example.com" name="email"
-          id="contact-us__input--email" />
+          id="contact-us__email" />
       </p>
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__input--text" required="required">Текст письма:</label>
-        <textarea class="contact-us__input" placeholder="В свободной форме" id="contact-us__input--text"></textarea>
+        <textarea class="contact-us__input" placeholder="В свободной форме" name="letter"
+          id="contact-us__text"></textarea>
       </p>
       <button class="contact-us__submit button" type="submit">Отправить</button>
     </form>
   </section>
+  <script src="js/popup.js"></script>
   <script src="js/script.js"></script>
 </body>
 
