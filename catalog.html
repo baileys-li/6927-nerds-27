@@ -284,6 +284,7 @@
     </section>
     <section class="contacts" id="contacts">
       <h2 class="visually-hidden">Наш адрес</h2>
+      <div class="contacts__map" id="map"></div>
       <div class="container">
         <address class="contacts__card"><b class="title--small">Nёrds design studio</b>
           <p class="contacts__card-text">
@@ -291,7 +292,7 @@
           <p class="contacts__card-text">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p><a
             class="contacts__button button" href="#contact-us">Напишите нам</a>
         </address>
-      </div><img class="contacts__map" src="img/map.jpg" alt="Скриншот карты" width="1440" height="416" />
+      </div>
     </section>
   </main>
   <footer class="page-footer container">
@@ -345,6 +346,10 @@
   </section>
   <script src="js/popup.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/map.js"></script>
+  <script async="async" defer="defer"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5RpDiAJWZEibQqg_2g2wttMNvOeSWQQM&amp;callback=initMap">
+  </script>
 </body>
 
 </html>
