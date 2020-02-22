@@ -25,16 +25,16 @@ function Thumb(thumb, output, rangeSelectedPoint) {
     this.output.value = price;
   }
   thumb.moveTo = function (coordinate) {
-    if (coordinate > thumb.output.max) {
-      coordinate = thumb.output.max;
+    if (coordinate > maxCord) {
+      coordinate = maxCord;
     }
 
-    if (coordinate < thumb.output.min) {
-      coordinate = thumb.output.min;
+    if (coordinate < minCord) {
+      coordinate = minCord;
     }
     this.rangeSelectedPoint.baseVal.value = coordinate + thumbRadius;
     this.x.baseVal.value = coordinate;
-    this.displayPrice(Math.floor(coordinate / maxCord * maxPrice));
+    this.displayPrice(Math.floor(coordinate / maxCord * this.output.max));
   }
 
   thumb.onmousedown = function (event) {
