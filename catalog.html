@@ -63,10 +63,14 @@
           <use xlink:href="#nerds-logo"></use>
         </svg></a>
       <ul class="main-nav__list site-list">
-        <li class="site-list__item"><a href="index.html#studio">Студия</a></li>
-        <li class="site-list__item"><a href="index.html#clients">Клиенты</a></li>
-        <li class="site-list__item"><a>Магазин</a></li>
-        <li class="site-list__item"><a href="index.html#contacts">Контакты</a></li>
+        <li class="site-list__item"><a href="index.html#studio">Студия</a>
+        </li>
+        <li class="site-list__item"><a href="index.html#clients">Клиенты</a>
+        </li>
+        <li class="site-list__item"><a>Магазин</a>
+        </li>
+        <li class="site-list__item"><a href="#contacts">Контакты</a>
+        </li>
       </ul>
       <ul class="main-nav__list user-list">
         <li class="user-list__item"><a href="cart.html">
@@ -86,29 +90,30 @@
             <legend class="filter__title title--small"> Стоимость:</legend>
             <div class="price__range">
               <svg height="22" width="222" viewBox="0 0 222 22" xmlns="http://www.w3.org/2000/svg">
-                <line stroke-width="2" x1="10" y1="10" x2="212" y2="10" stroke="#D7DCDE"></line>
-                <line stroke-width="2" x1="10" y1="10" x2="152" y2="10" stroke="#00CA74"></line>
-                <symbol viewBox="0 0 20 22" id="price__slider">
+                <line stroke-width="2" x1="10" y1="10" x2="212" y2="10" stroke="#D7DCDE" id="price__track"></line>
+                <line stroke-width="2" x1="10" y1="10" x2="159" y2="10" stroke="#00CA74" id="price__track--selected">
+                </line>
+                <symbol viewBox="0 0 20 22" id="price__thumb">
                   <circle cx="10" cy="12" r="10" fill="rgba(171, 171, 171, 0.3)"></circle>
                   <circle cx="10" cy="10" r="10" fill="white"></circle>
                   <circle cx="10" cy="10" r="2" fill="#ABABAB"></circle>
                 </symbol>
-                <g role="button" aria-labelledby="price__title--min" tabindex="0" id="price__slider--min">
-                  <title id="price__title--min">Минимальная цена</title>
-                  <use xlink:href="#price__slider" x="0" y="0" width="20" height="22"></use>
+                <g class="price__thumb" role="button" aria-labelledby="price--min__title" tabindex="0">
+                  <title id="price--min__title">Минимальная цена</title>
+                  <use xlink:href="#price__thumb" x="0" y="0" width="20" height="22" id="price--min"></use>
                 </g>
-                <g role="button" aria-labelledby="price__title--max" tabindex="0" id="price__slider--max">
-                  <title id="price__title--max">Максимальная цена</title>
-                  <use xlink:href="#price__slider" x="142" y="0" width="20" height="22"></use>
+                <g class="price__thumb" role="button" aria-labelledby="price--max__title" tabindex="0">
+                  <title id="price--max__title">Максимальная цена</title>
+                  <use xlink:href="#price__thumb" x="149" y="0" width="20" height="22" id="price--max"></use>
                 </g>
               </svg>
             </div>
             <div class="price__labels">
               <label class="price__label">От
-                <input class="price__number" type="number" value="0" />
+                <input class="price__number" type="number" value="0" min="0" max="20000" id="price__output--min" />
               </label>
               <label class="price__label">До
-                <input class="price__number" type="number" value="15000" />
+                <input class="price__number" type="number" value="15000" min="0" max="20000" id="price__output--max" />
               </label>
             </div>
           </fieldset>

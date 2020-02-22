@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,14 +17,18 @@ body {
   background-color: #ffffff;
 }
 
-a:not(.button) {
+section {
+  scroll-margin-top: 138px;
+}
+
+a[href]:not(.button) {
   color: #000000;
   text-decoration: none;
 }
-a:not(.button):hover, a:not(.button):focus {
+a[href]:not(.button):hover, a[href]:not(.button):focus {
   color: #fb565a;
 }
-a:not(.button):active {
+a[href]:not(.button):active {
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -138,6 +143,7 @@ input[type=radio].visually-hidden {
 .page-header {
   padding: 49px 0 18px;
   background: #eeeeee;
+  z-index: 50;
 }
 .page-header__logo:hover, .page-header__logo:focus {
   opacity: 0.8;
@@ -174,9 +180,11 @@ input[type=radio].visually-hidden {
 .user-list__item:last-child {
   margin-right: 0;
 }
-.site-list__item a:not([href]), .site-list__item a:not([href]),
+.site-list__item a:not([href]), .site-list__item.active, .site-list__item a:not([href]), .site-list__item.active,
 .user-list__item a:not([href]),
-.user-list__item a:not([href]) {
+.user-list__item.active,
+.user-list__item a:not([href]),
+.user-list__item.active {
   padding-bottom: 12px;
   border-bottom: 2px solid #fb565a;
 }
@@ -697,6 +705,9 @@ input[type=radio].visually-hidden {
   padding: 29px 19px 27px;
   border-radius: 5px;
   margin-bottom: 13px;
+}
+.price__thumb {
+  cursor: move;
 }
 .price__labels {
   display: flex;
