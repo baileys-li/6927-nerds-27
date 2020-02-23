@@ -34,7 +34,10 @@ function Thumb(thumb, output, rangeSelectedPoint) {
     }
     this.rangeSelectedPoint.baseVal.value = coordinate + thumbRadius;
     this.x.baseVal.value = coordinate;
-    this.displayPrice(Math.floor(coordinate / maxCord * this.output.max));
+
+    let price = coordinate / maxCord * this.output.max;
+    price /= 100;
+    this.displayPrice(parseInt(price) * 100);
   }
 
   thumb.onmousedown = function (event) {
