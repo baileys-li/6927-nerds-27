@@ -85,7 +85,7 @@
     <section class="catalog">
       <h2 class="catalog__title title">Магазин готовых шаблонов</h2>
       <div class="catalog__wrapper container">
-        <form class="catalog__filters" action="https://echo.htmlacademy.ru" method="get">
+        <form class="catalog__filters" action="#" method="get">
           <fieldset class="filter filters--cost">
             <legend class="filter__title title--small"> Стоимость:</legend>
             <div class="price__range">
@@ -98,7 +98,7 @@
                   <circle cx="10" cy="10" r="10" fill="white"></circle>
                   <circle cx="10" cy="10" r="2" fill="#ABABAB"></circle>
                 </symbol>
-                <g class="price__thumb" role="button" aria-labelledby="price--min__title" tabindex="0">
+                <g class="price__thumb" role="button" aria-labelledby="price--min__title" tabindex="0" name="price_min">
                   <title id="price--min__title">Минимальная цена</title>
                   <use xlink:href="#price__thumb" x="0" y="0" width="20" height="22" id="price--min"></use>
                 </g>
@@ -110,10 +110,12 @@
             </div>
             <div class="price__labels">
               <label class="price__label">От
-                <input class="price__number" type="number" value="0" min="0" max="20000" id="price__output--min" />
+                <input class="price__number" type="number" value="0" min="0" max="20000" step="100" name="price__from"
+                  id="price__output--min" />
               </label>
               <label class="price__label">До
-                <input class="price__number" type="number" value="15000" min="0" max="20000" id="price__output--max" />
+                <input class="price__number" type="number" value="15000" min="0" max="20000" step="100" name="price__to"
+                  id="price__output--max" />
               </label>
             </div>
           </fieldset>
@@ -122,15 +124,17 @@
             <ul class="filter__list">
               <li>
                 <input class="filter__choice visually-hidden" type="radio" name="grid" id="filter__choice--adaptive"
-                  checked="checked" />
+                  value="adaptive" checked="checked" />
                 <label class="filter__label filter__label--radio" for="filter__choice--adaptive">Адаптивная</label>
               </li>
               <li>
-                <input class="filter__choice visually-hidden" type="radio" name="grid" id="filter__choice--fixed" />
+                <input class="filter__choice visually-hidden" type="radio" name="grid" id="filter__choice--fixed"
+                  value="fixed" />
                 <label class="filter__label filter__label--radio" for="filter__choice--fixed">Фиксированная</label>
               </li>
               <li>
-                <input class="filter__choice visually-hidden" type="radio" name="grid" id="filter__choice--gum" />
+                <input class="filter__choice visually-hidden" type="radio" name="grid" id="filter__choice--gum"
+                  value="gum" />
                 <label class="filter__label filter__label--radio" for="filter__choice--gum">Резиновая</label>
               </li>
             </ul>
@@ -140,28 +144,28 @@
             <ul class="filter__list">
               <li>
                 <input class="filter__choice visually-hidden" type="checkbox" name="feature" id="filter__choice--slider"
-                  checked="checked" />
+                  value="slider" checked="checked" />
                 <label class="filter__label filter__label--checkbox" for="filter__choice--slider">Слайдер</label>
               </li>
               <li>
                 <input class="filter__choice visually-hidden" type="checkbox" name="feature"
-                  id="filter__choice--advantages" />
+                  id="filter__choice--advantages" value="advantages" />
                 <label class="filter__label filter__label--checkbox" for="filter__choice--advantages">Блок
                   преимуществ</label>
               </li>
               <li>
                 <input class="filter__choice visually-hidden" type="checkbox" name="feature" id="filter__choice--news"
-                  checked="checked" />
+                  value="news" checked="checked" />
                 <label class="filter__label filter__label--checkbox" for="filter__choice--news">Новости</label>
               </li>
               <li>
                 <input class="filter__choice visually-hidden" type="checkbox" name="feature"
-                  id="filter__choice--gallery" />
+                  id="filter__choice--gallery" value="gallery" />
                 <label class="filter__label filter__label--checkbox" for="filter__choice--gallery">Галерея</label>
               </li>
               <li>
-                <input class="filter__choice visually-hidden" type="checkbox" name="feature"
-                  id="filter__choice--cart" />
+                <input class="filter__choice visually-hidden" type="checkbox" name="feature" id="filter__choice--cart"
+                  value="cart" />
                 <label class="filter__label filter__label--checkbox" for="filter__choice--cart">Корзина</label>
               </li>
             </ul>
@@ -174,15 +178,17 @@
             <ul class="sort__list sort__list--type">
               <li>
                 <input class="sort__choice visually-hidden" type="radio" name="type" id="sort__choice--price"
-                  checked="checked" />
+                  value="price" checked="checked" />
                 <label class="sort__label sort__label--radio" for="sort__choice--price">По цене</label>
               </li>
               <li>
-                <input class="sort__choice visually-hidden" type="radio" name="type" id="sort__choice--type" />
+                <input class="sort__choice visually-hidden" type="radio" name="type" id="sort__choice--type"
+                  value="type" />
                 <label class="sort__label sort__label--radio" for="sort__choice--type">По типу</label>
               </li>
               <li>
-                <input class="sort__choice visually-hidden" type="radio" name="type" id="sort__choice--name" />
+                <input class="sort__choice visually-hidden" type="radio" name="type" id="sort__choice--name"
+                  value="name" />
                 <label class="sort__label sort__label--radio" for="sort__choice--name">По названию</label>
               </li>
             </ul>
