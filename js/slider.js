@@ -13,10 +13,16 @@ for (let index = 0; index < slides.length; index++) {
   toggleInput.type = "radio";
   toggleInput.name = "slider";
   toggleInput.id = "slider__toggle--" + outputIndex;
-  toggleInput.classList.add("slider__toggle", "visually-hidden")
+  toggleInput.classList.add("slider__toggle");
+  toggleInput.classList.add("visually-hidden");
   if (outputIndex == 1) {
     toggleInput.checked = true;
   }
+  toggleInput.addEventListener("change", function () {
+    let path = "#" + slides[index].id;
+    document.location.href = path;
+  })
+
   newToggle.appendChild(toggleInput);
 
 
@@ -25,11 +31,6 @@ for (let index = 0; index < slides.length; index++) {
   toggleLabel.textContent = "Перейти к  слайду №" + outputIndex;
   toggleLabel.classList.add("slider__label");
   newToggle.appendChild(toggleLabel);
-
-  toggleInput.addEventListener("change", function () {
-    let path = "#" + slides[index].id;
-    document.location.href = path;
-  })
 
   sliderToggles.appendChild(newToggle);
 }
