@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/normalizemin.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap&amp;subset=cyrillic"
     rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stylemin.css" />
 </head>
 
 <body><svg style="display: none">
@@ -98,7 +98,7 @@
                   <circle cx="10" cy="10" r="10" fill="white"></circle>
                   <circle cx="10" cy="10" r="2" fill="#ABABAB"></circle>
                 </symbol>
-                <g class="price__thumb" role="button" aria-labelledby="price--min__title" tabindex="0" name="price_min">
+                <g class="price__thumb" role="button" aria-labelledby="price--min__title" tabindex="0">
                   <title id="price--min__title">Минимальная цена</title>
                   <use xlink:href="#price__thumb" x="0" y="0" width="20" height="22" id="price--min"></use>
                 </g>
@@ -339,29 +339,28 @@
       </svg></a>
     <form class="contact-us__form" action="https://echo.htmlacademy.ru" method="post">
       <p class="contact-us__wrapper">
-        <label class="contact-us__label" for="contact-us__input--name">Ваше имя:</label>
-        <input class="contact-us__input" type="text" placeholder="Имя Фамилия" name="name" id="contact-us__name" />
+        <label class="contact-us__label" for="contact-us__name">Ваше имя:</label>
+        <input class="contact-us__input" id="contact-us__name" type="text" placeholder="Имя Фамилия" name="name" />
       </p>
       <p class="contact-us__wrapper">
-        <label class="contact-us__label" for="contact-us__input--email" required="required">Ваш e-mail:</label>
-        <input class="contact-us__input" type="email" placeholder="email@example.com" name="email"
-          id="contact-us__email" />
+        <label class="contact-us__label" for="contact-us__email">Ваш e-mail:</label>
+        <input class="contact-us__input" id="contact-us__email" type="email" placeholder="email@example.com"
+          name="email" required />
       </p>
       <p class="contact-us__wrapper">
-        <label class="contact-us__label" for="contact-us__input--text" required="required">Текст письма:</label>
-        <textarea class="contact-us__input" placeholder="В свободной форме" name="letter"
-          id="contact-us__text"></textarea>
+        <label class="contact-us__label" for="contact-us__text">Текст письма:</label>
+        <textarea class="contact-us__input" id="contact-us__text" placeholder="В свободной форме" name="letter"
+          required></textarea>
       </p>
       <button class="contact-us__submit button" type="submit">Отправить</button>
     </form>
   </section>
-  <script src="js/script.js"></script>
-  <script src="js/popup.js"></script>
-  <script src="js/map.js"></script>
+  <script src="js/popup--min.js"></script>
+  <script src="js/map--min.js"></script>
   <script async="async" defer="defer"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcCEBlitoLnrG55D-iXgCTNmKfcPyvCME&amp;callback=initMap">
   </script>
-  <script src="js/price.js"></script>
+  <script src="js/price--min.js"></script>
 </body>
 
 </html>
