@@ -12,23 +12,19 @@ html {
 body {
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   color: #283136;
   background-color: #ffffff;
 }
 
-section {
-  scroll-margin-top: 138px;
-}
-
-a[href]:not(.button) {
+a {
   color: #000000;
   text-decoration: none;
 }
-a[href]:not(.button):hover, a[href]:not(.button):focus {
+a:hover, a:focus {
   color: #fb565a;
 }
-a[href]:not(.button):active {
+a:active {
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -449,13 +445,13 @@ input[type=radio].visually-hidden {
   content: none;
 }
 .partners__item a {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .partners__item a:hover, .partners__item a:focus {
   opacity: 1;
 }
 .partners__item a:active {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .contacts {
@@ -502,9 +498,9 @@ input[type=radio].visually-hidden {
 
 .catalog__title {
   display: block;
-  max-width: 80ch;
+  width: 100%;
   margin: 0 0 54px;
-  padding: 53px 100px 110px;
+  padding: 53px 300px 110px;
   text-align: center;
   background-color: #eeeeee;
 }
@@ -596,7 +592,7 @@ input[type=radio].visually-hidden {
 }
 .filter__label::before {
   margin-right: 10px;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 .filter__label--checkbox {
   margin-bottom: 15px;
@@ -620,6 +616,9 @@ input[type=radio].visually-hidden {
 .filter__choice:disabled + .filter__label {
   cursor: auto;
   opacity: 0.3;
+}
+.filter__choice:disabled + .filter__label::before {
+  opacity: 0.1;
 }
 .filter__choice:focus + .filter__label {
   outline: 2px solid #fb565a;
@@ -674,10 +673,10 @@ input[type=radio].visually-hidden {
   outline-offset: 4px;
 }
 .sort__label {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.3);
 }
 .sort__label:hover, .sort__label:focus {
-  color: #000;
+  color: rgba(0, 0, 0, 0.6);
 }
 .sort__label--up svg {
   transform: rotate(180deg);
@@ -924,5 +923,6 @@ input[type=radio].visually-hidden {
   opacity: 1;
 }
 .modal__close:active {
+  color: #fb565a;
   opacity: 0.3;
 }
