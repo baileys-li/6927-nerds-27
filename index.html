@@ -194,11 +194,11 @@
       <h2 class="visually-hidden">Наш адрес</h2>
       <div class="contacts__map" id="map"></div>
       <div class="container">
-        <address class="contacts__card"><b class="title--small">Nёrds design studio</b>
+        <address class="contacts__card"><b class="contacts__name title--small">Nёrds design studio</b>
           <p class="contacts__card-text">
             191186, Санкт-Петербург, <br>ул. Б. Конюшенная, д. 19/8</p>
-          <p class="contacts__card-text">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p><a
-            class="contacts__button button" href="#contact-us">Напишите нам</a>
+          <p class="contacts__card-text">тел. <a class="contacts__phone" href="tel:+78122757575">+7 (812) 275-75-75</a>
+          </p><a class="contacts__button button" href="#contact-us">Напишите нам</a>
         </address>
       </div>
     </section>
@@ -242,12 +242,12 @@
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__email">Ваш e-mail:</label>
         <input class="contact-us__input" id="contact-us__email" type="email" placeholder="email@example.com"
-          name="email" required />
+          name="email" required="required" />
       </p>
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__text">Текст письма:</label>
         <textarea class="contact-us__input" id="contact-us__text" placeholder="В свободной форме" name="letter"
-          required></textarea>
+          required="required"></textarea>
       </p>
       <button class="contact-us__submit button" type="submit">Отправить</button>
     </form>

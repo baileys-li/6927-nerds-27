@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Магазин готовых шаблонов</title>
   <link rel="stylesheet" href="css/normalizemin.css" />
@@ -86,7 +85,7 @@
       <h2 class="catalog__title title">Магазин готовых шаблонов</h2>
       <div class="catalog__wrapper container">
         <form class="catalog__filters" action="#" method="get">
-          <fieldset class="filter filters--cost">
+          <fieldset class="filter filter--cost">
             <legend class="filter__title title--small"> Стоимость:</legend>
             <div class="price__range">
               <svg height="22" width="222" viewBox="0 0 222 22" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +118,7 @@
               </label>
             </div>
           </fieldset>
-          <fieldset class="filter filters--grid">
+          <fieldset class="filter filter--grid">
             <legend class="filter__title title--small"> Сетка:</legend>
             <ul class="filter__list">
               <li>
@@ -139,7 +138,7 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="filter catalog__filter">
+          <fieldset class="filter filter--feature">
             <legend class="filter__title title--small"> Особенности:</legend>
             <ul class="filter__list">
               <li>
@@ -297,11 +296,11 @@
       <h2 class="visually-hidden">Наш адрес</h2>
       <div class="contacts__map" id="map"></div>
       <div class="container">
-        <address class="contacts__card"><b class="title--small">Nёrds design studio</b>
+        <address class="contacts__card"><b class="contacts__name title--small">Nёrds design studio</b>
           <p class="contacts__card-text">
             191186, Санкт-Петербург, <br>ул. Б. Конюшенная, д. 19/8</p>
-          <p class="contacts__card-text">тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a></p><a
-            class="contacts__button button" href="#contact-us">Напишите нам</a>
+          <p class="contacts__card-text">тел. <a class="contacts__phone" href="tel:+78122757575">+7 (812) 275-75-75</a>
+          </p><a class="contacts__button button" href="#contact-us">Напишите нам</a>
         </address>
       </div>
     </section>
@@ -345,12 +344,12 @@
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__email">Ваш e-mail:</label>
         <input class="contact-us__input" id="contact-us__email" type="email" placeholder="email@example.com"
-          name="email" required />
+          name="email" required="required" />
       </p>
       <p class="contact-us__wrapper">
         <label class="contact-us__label" for="contact-us__text">Текст письма:</label>
         <textarea class="contact-us__input" id="contact-us__text" placeholder="В свободной форме" name="letter"
-          required></textarea>
+          required="required"></textarea>
       </p>
       <button class="contact-us__submit button" type="submit">Отправить</button>
     </form>
