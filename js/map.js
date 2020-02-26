@@ -1,5 +1,3 @@
-"use strict";
-
 function initMap() {
   let opt = {
     center: {

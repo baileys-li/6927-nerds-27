@@ -1,5 +1,3 @@
-"use strict";
-
 let link = document.querySelector(".contacts__button"),
   modal = document.querySelector(".contact-us"),
   close = modal.querySelector(".modal__close");
@@ -50,13 +48,15 @@ window.addEventListener("keydown", function (evt) {
 });
 
 form.addEventListener("submit", function (evt) {
-  if (!email.value || !letter.value) {
+  if (!email.value || !letter.value || !name.value) {
     evt.preventDefault();
     //! Тут баг 🐛 😢
-    /*
-    // modal.classList.remove("modal--error");
-    // modal.offsetWidth = modal.offsetWidth;
-    */
+
+    modal.classList.remove("modal--error");
+
+    console.log(modal.offsetWidth);
+    modal.offsetWidth == modal.offsetWidth;
+
     modal.classList.add("modal--error");
   } else {
     if (isStorageSupport) {
