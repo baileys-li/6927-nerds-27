@@ -212,6 +212,7 @@ input[type=radio].visually-hidden {
   padding: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  min-height: 0px;
   list-style: none;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
@@ -225,7 +226,7 @@ input[type=radio].visually-hidden {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-right: 100px;
   padding: 52px 0 80px;
   background-repeat: no-repeat;
@@ -483,9 +484,6 @@ input[type=radio].visually-hidden {
 .contacts__card-text {
   margin: 0 0 18px;
   line-height: 1.13;
-  color: #666666;
-}
-.contacts__card-text a[href]:not(.button) {
   color: #666666;
 }
 .contacts__button {
@@ -823,6 +821,22 @@ input[type=radio].visually-hidden {
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes close {
+  0% {
+    transform: translateY(0);
+    display: flex;
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(-2000px);
+    display: none;
   }
 }
 @keyframes shake {
