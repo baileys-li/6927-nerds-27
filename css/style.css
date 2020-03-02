@@ -293,17 +293,16 @@ input[type=radio].visually-hidden {
 .services__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .services__item {
   display: flex;
-  flex: 1 0 300px;
   flex-direction: column;
+  width: 300px;
   max-width: 50%;
-  margin-right: 130px;
+  margin-right: 100px;
   margin-bottom: 60px;
 }
 .services__item:nth-child(3n) {
@@ -341,6 +340,7 @@ input[type=radio].visually-hidden {
   text-transform: uppercase;
 }
 .services__description {
+  width: 90%;
   margin: 0 0 33px;
   color: #283136;
 }
