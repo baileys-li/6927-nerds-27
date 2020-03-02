@@ -919,6 +919,10 @@ input[type=radio].visually-hidden {
   box-shadow: 0px 20px 40px 0 rgba(0, 1, 1, 0.75);
   display: none;
 }
+.modal--close {
+  display: flex;
+  animation: close 0.9s forwards;
+}
 .modal--show, .modal:target {
   display: flex;
   animation: bounce 0.6s;

@@ -19,6 +19,7 @@ try {
 
 link.addEventListener("click", function (evt) {
   evt.preventDefault();
+  modal.classList.remove("modal--close");
   modal.classList.add("modal--show");
   if (storageNameVal) {
     name.value = storageNameVal;
@@ -33,16 +34,14 @@ link.addEventListener("click", function (evt) {
 
 close.addEventListener("click", function (evt) {
   evt.preventDefault();
-  modal.classList.remove("modal--error");
-  modal.classList.remove("modal--show");
+  closeModal()
 });
 
 window.addEventListener("keydown", function (evt) {
   if (evt.keyCode === 27) {
     if (modal.classList.contains("modal--show")) {
       evt.preventDefault();
-      modal.classList.remove("modal--error");
-      modal.classList.remove("modal--show");
+      closeModal()
     }
   }
 });
@@ -50,11 +49,11 @@ window.addEventListener("keydown", function (evt) {
 form.addEventListener("submit", function (evt) {
   if (!email.value || !letter.value || !name.value) {
     evt.preventDefault();
-    //! Тут баг 🐛 😢
+
 
     modal.classList.remove("modal--error");
 
-    console.log(modal.offsetWidth);
+    // console.log(modal.offsetWidth);
     modal.offsetWidth == modal.offsetWidth;
 
     modal.classList.add("modal--error");
@@ -67,3 +66,10 @@ form.addEventListener("submit", function (evt) {
     }
   }
 });
+
+
+function closeModal() {
+  modal.classList.remove("modal--error");
+  modal.classList.remove("modal--show");
+  modal.classList.add("modal--close");
+}
