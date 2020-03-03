@@ -141,7 +141,6 @@ input[type=radio].visually-hidden {
 .page-header {
   padding: 49px 0 18px;
   background: #eeeeee;
-  z-index: 50;
 }
 .page-header__logo:hover, .page-header__logo:focus {
   opacity: 0.8;
@@ -671,14 +670,14 @@ input[type=radio].visually-hidden {
   color: #000000;
 }
 .sort__choice:focus + .sort__label {
-  transform: scale(1.8);
-  outline: 2px solid #fb565a;
-  outline-offset: 5px;
+  display: block;
+  transform: scale(1.2) translateY(3px);
+  transition: transform 0.3s;
 }
 .sort__label {
   color: rgba(0, 0, 0, 0.3);
 }
-.sort__label:hover, .sort__label:focus {
+.sort__label:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 .sort__label--up svg {
