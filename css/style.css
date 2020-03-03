@@ -226,7 +226,7 @@ input[type=radio].visually-hidden {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-right: 100px;
   padding: 52px 0 80px;
   background-repeat: no-repeat;
@@ -245,11 +245,11 @@ input[type=radio].visually-hidden {
   background-image: url(../img/slider/slide3.png);
 }
 .slider__slogan {
-  max-width: 515px;
+  max-width: 45%;
   margin-bottom: 28px;
 }
 .slider__description {
-  max-width: 410px;
+  max-width: 30%;
   margin: 0 0 40px;
 }
 .slider__button {
