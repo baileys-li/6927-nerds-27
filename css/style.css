@@ -621,8 +621,8 @@ input[type=radio].visually-hidden {
   opacity: 0.1;
 }
 .filter__choice:focus + .filter__label {
-  outline: 2px solid #fb565a;
-  outline-offset: 5px;
+  transform: scale(1.2) translateX(19px);
+  transition: transform 0.3s;
 }
 .filter__sort {
   display: flex;
@@ -671,8 +671,9 @@ input[type=radio].visually-hidden {
   color: #000000;
 }
 .sort__choice:focus + .sort__label {
+  transform: scale(1.8);
   outline: 2px solid #fb565a;
-  outline-offset: 4px;
+  outline-offset: 5px;
 }
 .sort__label {
   color: rgba(0, 0, 0, 0.3);
