@@ -130,6 +130,7 @@ input[type=radio].visually-hidden {
   background-color: #eeeeee;
 }
 .button--grey:hover {
+  color: #000000;
   background-color: #dfdfdf;
 }
 .button--grey:active, .button--grey:focus {
