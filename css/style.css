@@ -620,7 +620,8 @@ input[type=radio].visually-hidden {
   opacity: 0.1;
 }
 .filter__choice:focus + .filter__label {
-  transform: scale(1.2) translateX(19px);
+  transform: scale(1.2);
+  transform-origin: 6% 50%;
   transition: transform 0.3s;
 }
 .filter__sort {
@@ -671,7 +672,8 @@ input[type=radio].visually-hidden {
 }
 .sort__choice:focus + .sort__label {
   display: block;
-  transform: scale(1.2) translateY(3px);
+  transform: scale(1.2);
+  transform-origin: 0 -10px;
   transition: transform 0.3s;
 }
 .sort__label {
