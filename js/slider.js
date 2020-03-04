@@ -1,6 +1,7 @@
 try {
   let slider = document.querySelector(".slider"),
-    slides = slider.querySelectorAll(".slider__item"),
+    sliderList = slider.querySelector(".slider__list"),
+    slides = sliderList.querySelectorAll(".slider__item"),
     sliderToggles = slider.querySelector(".slider__toggles");
 
   for (let index = 0; index < slides.length; index++) {
@@ -17,8 +18,8 @@ try {
       toggleInput.checked = true;
     }
     toggleInput.addEventListener("change", function () {
-      let path = "#" + slides[index].id;
-      document.location.href = path;
+      let coords = slides[index].getBoundingClientRect();
+      sliderList.scrollLeft += coords.x;
     })
 
     newToggle.appendChild(toggleInput);
