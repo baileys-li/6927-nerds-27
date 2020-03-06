@@ -356,7 +356,7 @@ input[type=radio].visually-hidden {
   border-bottom: 2px solid #eeeeee;
 }
 .studio__about {
-  width: 650px;
+  width: 660px;
   padding-top: 33px;
 }
 .studio__text {
@@ -432,7 +432,7 @@ input[type=radio].visually-hidden {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 22%;
+  min-width: 260px;
   margin-bottom: 30px;
 }
 .partners__item::after {
@@ -531,16 +531,12 @@ input[type=radio].visually-hidden {
 }
 
 .pagination {
-  margin: 26px auto 61px;
+  margin: 26px 0 61px;
 }
 .pagination, .pagination__pages {
   display: flex;
-  justify-content: center;
   padding: 0;
   list-style: none;
-}
-.pagination li, .pagination__pages li {
-  margin-right: 11px;
 }
 .pagination .button {
   min-height: 50px;
@@ -548,6 +544,9 @@ input[type=radio].visually-hidden {
 .pagination__pages {
   counter-reset: page;
   margin: 0;
+}
+.pagination__pages li {
+  margin-right: 12px;
 }
 .pagination__page {
   font-size: 0;
