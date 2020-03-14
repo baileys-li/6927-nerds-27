@@ -438,7 +438,8 @@ input[type=radio].visually-hidden {
 .partners__item::after {
   content: "";
   position: absolute;
-  right: -10%;
+  top: 15px;
+  right: -8.2%;
   width: 2px;
   height: 52px;
   background-color: #eeeeee;
