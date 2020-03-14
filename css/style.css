@@ -182,7 +182,7 @@ input[type=radio].visually-hidden {
 .user-list__item.active,
 .user-list__item a:not([href]),
 .user-list__item.active {
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   border-bottom: 2px solid #fb565a;
 }
 
@@ -236,7 +236,7 @@ input[type=radio].visually-hidden {
 }
 .slider__item:nth-child(3n+1) {
   background-image: url(../img/slider/slide1.png);
-  background-position-x: 91%;
+  background-position-x: 92%;
 }
 .slider__item:nth-child(3n+2) {
   background-image: url(../img/slider/slide2.png);
@@ -513,6 +513,7 @@ input[type=radio].visually-hidden {
 }
 .catalog__filters .button {
   width: 100%;
+  min-height: 50px;
 }
 .catalog__main {
   width: 760px;
@@ -567,7 +568,7 @@ input[type=radio].visually-hidden {
 
 .filter {
   border: none;
-  margin: 0 0 52px;
+  margin: 0 0 55px;
   padding: 0;
 }
 .filter__title {
@@ -584,7 +585,7 @@ input[type=radio].visually-hidden {
 .filter__label {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   line-height: 1;
   cursor: pointer;
 }
@@ -630,10 +631,10 @@ input[type=radio].visually-hidden {
   margin-bottom: 48px;
 }
 .filter--grid {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 .filter--feature {
-  margin-bottom: 35px;
+  margin-bottom: 31px;
 }
 
 .sort {
@@ -741,8 +742,8 @@ input[type=radio].visually-hidden {
 }
 
 .price__range {
-  margin-bottom: 13px;
-  padding: 29px 19px 27px;
+  margin-bottom: 15px;
+  padding: 29px 19px 22px;
   background-color: #eeeeee;
   border-radius: 5px;
 }
@@ -760,7 +761,7 @@ input[type=radio].visually-hidden {
 .price__number {
   width: 80px;
   height: 38px;
-  margin-left: 10px;
+  margin-left: 8px;
   text-align: center;
   background-color: #eeeeee;
   border: none;
