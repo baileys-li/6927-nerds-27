@@ -139,7 +139,7 @@ input[type=radio].visually-hidden {
 }
 
 .page-header {
-  padding: 49px 0 18px;
+  padding: 49px 0 0;
   background: #eeeeee;
 }
 .page-header__logo:hover, .page-header__logo:focus {
@@ -228,7 +228,7 @@ input[type=radio].visually-hidden {
   flex-direction: column;
   justify-content: flex-end;
   margin-right: 100px;
-  padding: 52px 0 80px;
+  padding: 70px 0 80px;
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
@@ -236,7 +236,8 @@ input[type=radio].visually-hidden {
 }
 .slider__item:nth-child(3n+1) {
   background-image: url(../img/slider/slide1.png);
-  background-position-x: 92%;
+  background-position: 93% 100%;
+  background-size: auto;
 }
 .slider__item:nth-child(3n+2) {
   background-image: url(../img/slider/slide2.png);
@@ -499,8 +500,8 @@ input[type=radio].visually-hidden {
 .catalog__title {
   display: block;
   width: 100%;
-  margin: 0 0 54px;
-  padding: 53px 300px 110px;
+  margin: 0 0 55px;
+  padding: 70px 300px 110px;
   text-align: center;
   background-color: #eeeeee;
 }
