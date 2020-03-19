@@ -1,0 +1,24 @@
+mixin makeSliderItem(id, slogan, description)
+  li.slider__item
+    strong.slider__slogan.title= slogan
+    p.slider__description= description
+    a(href="#").button.slider__button Узнать больше
+
+mixin makeToogle(text, id)
+  if id == 0
+    input(type="radio", name="slider" id="slider__toggle--"+(id+1), checked).slider__toggle.visually-hidden
+  else
+    input(type="radio", name="slider" id="slider__toggle--"+(id+1)).slider__toggle.visually-hidden
+  label(for="slider__toggle--"+(id+1)).slider__label= "Перейти к " + text + " слайду"
+
+section.banner.slider
+  h2.visually-hidden Слайдер-баннер
+  ol.slider__list.container
+    +makeSliderItem(1, "Долго, дорого, скрупулезно.", "Математически выверенный дизайн для вашего сайта или мобильного приложения.")
+    +makeSliderItem(2, "Любим математику как никто другой", "Никакого креатива, только математические формулы для расчета идеальных пропорций.")
+    +makeSliderItem(3, "Только ночь, только хардкор", "Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.")
+
+  ol.slider__toggles
+
+
+

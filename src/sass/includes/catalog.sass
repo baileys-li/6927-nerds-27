@@ -1,0 +1,261 @@
+.catalog
+  &__title
+    display: block
+    width: 100%
+    margin: 0 0 55px
+    padding: 70px 300px 110px
+
+    text-align: center
+
+    background-color: $another-bg
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+  &__filters
+    width: 260px
+    margin-right: 140px
+    & .button
+      width: 100%
+      min-height: 50px
+  &__main
+    width: 760px
+  &__sorts
+    width: 100%
+    margin: 4px 0 50px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0
+    padding: 0
+
+    list-style: none
+
+.pagination
+  margin: 26px 0 61px
+  &,
+  &__pages
+    display: flex
+    padding: 0
+
+    list-style: none
+
+  & .button
+    min-height: 50px
+  &__pages
+    counter-reset: page
+    margin: 0
+    & li
+      margin-right: 12px
+  &__page
+    font-size: 0
+    &:not([href])
+      background-color: #ffffff
+      box-shadow: inset 0 0 0 3px $another-bg
+      cursor: unset
+    &::before
+      content: counter(page)
+
+      font-size: 16px
+
+      counter-increment: page
+
+  &__prev,
+  &__next
+    & .button
+      width: 260px
+
+.filter
+  border: none
+  margin: 0 0 55px
+  padding: 0
+  &__title
+    margin-bottom: 12px
+
+    font-size: 18px
+    line-height: 1.67
+    letter-spacing: 0.18px
+
+  &__list
+    margin: 0
+    padding: 0
+
+    list-style: none
+
+  &__label
+    display: flex
+    align-items: center
+    margin-bottom: 13px
+
+    line-height: 1
+
+    cursor: pointer
+
+    &::before
+      margin-right: 10px
+      opacity: 0.4
+    &--checkbox
+      margin-bottom: 15px
+    &--checkbox::before
+      width: 27px
+      content: url('../img/check-off.svg')
+    &--radio::before
+      content: url('../img/radio-off.svg')
+    &:hover::before
+      opacity: 1
+
+  &__choice:checked + &__label
+    &--checkbox::before
+      content: url('../img/check-on.svg')
+    &--radio::before
+      content: url('../img/radio-on.svg')
+  &__choice:disabled + &__label
+    cursor: auto
+    opacity: 0.3
+    &::before
+      opacity: 0.1
+
+  &__choice:focus + &__label
+    transform: scale(1.2)
+    transform-origin: 6% 50%
+    transition: transform 0.3s
+
+  &__sort
+    display: flex
+
+  &--cost &__title
+    margin-bottom: 48px
+
+  &--grid
+    margin-bottom: 28px
+
+  &--feature
+    margin-bottom: 31px
+
+.sort
+  display: flex
+  align-items: flex-start
+  &__title
+    margin: 0
+  &__list
+    position: relative
+    top: -4px
+
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0
+    padding: 0
+
+    list-style: none
+    text-transform: uppercase
+
+    &--type
+      min-width: 35.8%
+      margin-right: 48px
+      margin-left: auto
+
+    &--order
+      min-width: 5.3%
+  .sort__label
+    font-size: 14px
+    line-height: 1.29
+
+  &__choice
+    &:checked + .sort__label
+      color: #000000
+    &:focus + .sort__label
+      display: block
+      transform: scale(1.2)
+      transform-origin: 0 -10px
+      transition: transform 0.3s
+
+  &__label
+    color: rgba(0, 0, 0, 0.3)
+    &:hover
+      color: rgba(0, 0, 0, 0.6)
+    &--up svg
+      transform: rotate(180deg)
+
+.template
+  position: relative
+
+  display: flex
+  flex-direction: column
+  max-width: 360px
+  margin: 0 0 33px
+  &::before
+    content: url(../img/browser-buttons.svg)
+
+    height: 40px
+    padding-left: 18px
+    display: flex
+    align-items: center
+
+    background-color: $another-bg
+    border-radius: 5px 5px 0 0
+  &:hover,
+  &:focus
+    box-shadow: 0px 6px 15px 0 rgba(0, 1, 1, 0.25)
+    outline: none
+    &::before
+      background-color: #4D4D4D
+    & .template__info
+      opacity: 1
+
+  &__info
+    position: absolute
+    bottom: 0
+    opacity: 0
+
+    box-sizing: border-box
+    width: 100%
+    padding: 34px 80px 48px
+
+    background-color: $another-bg
+  &__title
+    margin: 0 0 20px
+
+    font-weight: bold
+    font-size: 18px
+    line-height: 1
+    text-align: center
+    text-transform: uppercase
+  &__desc
+    line-height: 1.13
+    text-align: center
+    color: #666666
+  & .button
+    display: block
+    width: 100%
+    max-width: 200px
+    margin: 31px auto 0
+
+.price
+  &__range
+    margin-bottom: 15px
+    padding: 29px 19px 22px
+
+    background-color: $another-bg
+    border-radius: 5px
+
+  &__thumb
+    cursor: move
+
+  &__labels
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__label
+    text-transform: uppercase
+  &__number
+    width: 80px
+    height: 38px
+    margin-left: 8px
+
+    text-align: center
+
+    background-color: $another-bg
+    border: none
+    border-radius: 5px

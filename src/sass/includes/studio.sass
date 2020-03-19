@@ -1,0 +1,65 @@
+.studio
+  display: flex
+  justify-content: space-between
+  padding: 40px 0 49px
+
+  border-bottom: 2px solid $another-bg
+
+  &__about
+    width: 660px
+    padding-top: 33px
+
+  &__text
+    margin: 34px 0 39px
+
+  &__subtitle
+    font-weight: bold
+    text-transform: uppercase
+
+  &__list
+    margin: 24px 0
+    padding: 0
+
+    list-style: none
+    &-item
+      display: flex
+      align-items: center
+      margin-bottom: 24px
+      &::before
+        content: ""
+
+        width: 25px
+        height: 2px
+        margin-right: 10px
+
+        background-color: $accent-color
+
+  &__stats &__subtitle
+    display: block
+    margin: 29px 0 28px
+
+    text-align: center
+
+  &__stats
+    width: 360px
+    & table
+      width: 100%
+
+    &-head
+      display: table-footer-group
+      & th
+        width: 33%
+        padding: 5px 0
+
+        font-weight: normal
+        line-height: 1.13
+        text-align: left
+        color: #283136
+
+    &-vals
+      font-weight: bold
+      font-size: 45px
+      & sup
+        top: -0.49em
+
+        font-size: 0.6em

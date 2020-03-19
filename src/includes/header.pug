@@ -1,0 +1,35 @@
+- var menuItems = {"Студия":"#studio", "Клиенты":"#clients", "Магазин":"catalog.html", "Контакты": "#contacts"};
+
+header.page-header
+  nav.main-nav.container
+    if currentPage == "index"
+      a.page-header__logo
+        svg(width="160", height="65", role="img", focusable="false", aria-labelledby="nerds-logo__title")
+          title#nerds-logo__title Логотип «Нёрдс»
+          use(xlink:href="#nerds-logo")
+    else
+      a(href="index.html").page-header__logo
+        svg(width="160", height="65", role="img", focusable="false", aria-labelledby="nerds-logo__title")
+          title#nerds-logo__title Логотип «Нёрдс», а также ссылка на главную
+          use(xlink:href="#nerds-logo")
+
+    ul.main-nav__list.site-list
+      each val, key in menuItems
+        li.site-list__item
+          if currentPage != "index"
+            case val
+              when currentPage
+                a= key
+              when "#contacts"
+                a(href=val)= key
+              default
+                a(href="index.html" + val)= key
+          else
+            a(href=val)= key
+
+    ul.main-nav__list.user-list
+      li.user-list__item
+        a(href="cart.html")
+          svg(role="img", focusable="false", aria-hidden="true", width="15", height="15").icon
+            use(xlink:href="#icon-basket")
+          | Корзина

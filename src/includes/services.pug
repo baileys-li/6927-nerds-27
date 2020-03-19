@@ -1,0 +1,28 @@
+mixin makeService(name, description, pathName, width = "300", height = "146", newColor = "", format = "svg")
+  li(class = "services__item--" + pathName).services__item
+    figure.services__pic
+      -var path = "img/services/" +pathName;
+      if format == "png"
+        img(src=path+"."+format,
+        srcset=path+"@2x."+format +" 2x, " +path + "@3x."+format +" 3x, "+ path +"@4x."+format +" 4x",
+        alt= name + " иллюстрация",
+        width= width,
+        height= height)
+      else
+        img(src= path+"."+format, alt= name + " иллюстрация", width= width, height= height)
+
+    h3.services__name= name
+    p.services__description= description
+    if newColor != ""
+      a(href="order.html" class="button--"+newColor).button Заказать
+    else
+      a(href="order.html").button Заказать
+
+section.services.container
+  h2.visually-hidden Наши услуги
+
+  ul.services__list
+    +makeService("Веб-сайты", "Мир никогда не будет прежним после того как увидит ваш сайт!", 'website', "136", "79")
+    +makeService("Приложения", "Покорите топ-10 приложений в AppStore и Google Play", "iphones", "104", "92", "green", "png")
+    +makeService("Презентации", "Вы даже не подозреваете, насколько вы изумительны!", "presentation", "84", "77", "yellow")
+

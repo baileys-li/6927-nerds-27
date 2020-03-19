@@ -1,0 +1,64 @@
+.services
+  padding: 80px 0 20px
+
+  border-bottom: 2px solid $another-bg
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    // justify-content: space-between
+    margin: 0
+    padding: 0
+
+    list-style: none
+
+  &__item
+    display: flex
+    // flex: 1 0 300px
+    flex-direction: column
+    width: 300px
+    max-width: 50%
+    margin-right: 100px
+    margin-bottom: 60px
+
+    &:nth-child(3n)
+      margin-right: 0
+    &:last-child
+      margin-right: 0
+    &--website .services__pic
+      background-color: $accent-color
+    &--iphones .services
+      &__pic
+        background-color: #00ca74
+    &--presentation .services
+      &__pic
+        background-color: #efc84a
+    & .button
+      width: 160px
+      margin-top: auto
+
+  &__pic
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 146px
+    margin: 0
+
+  &__name
+    margin: 25px 0 15px
+
+    font-weight: bold
+    font-size: 24px
+    line-height: 1.25
+    color: $main-color
+    text-transform: uppercase
+
+  &__description
+    width: 90%
+    margin: 0 0 33px
+
+    color: #283136
+
+  &__button
+    width: 160px
+    height: 50px

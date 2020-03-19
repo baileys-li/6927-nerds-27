@@ -1,0 +1,46 @@
+.partners
+  padding: 50px 0 5px
+  margin-bottom: 80px
+
+  border-bottom: 2px solid $another-bg
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin: 0
+    padding: 0
+
+    list-style: none
+
+  &__item
+    position: relative
+
+    display: flex
+    justify-content: center
+    align-items: center
+    min-width: 260px
+    margin-bottom: 30px
+    &::after
+      content: ""
+      position: absolute
+      top: 15px
+      right: -8.2%
+
+      width: 2px
+      height: 52px
+
+      background-color: $another-bg
+
+    &:nth-of-type(4n),
+    &:last-child
+      &::after
+        content: none
+
+    & a
+      opacity: 0.2
+      &:hover,
+      &:focus
+        opacity: 1
+      &:active
+        opacity: 0.1

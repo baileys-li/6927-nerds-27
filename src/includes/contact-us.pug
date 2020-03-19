@@ -1,0 +1,20 @@
+section.contact-us.modal#contact-us
+  h2.contact-us__title.subtitle Напишите нам
+  a(href="#").modal__close
+    svg(role="img", focusable="false", width="21", height="21", aria-labelledby="modal-close").icon
+      title#modal-close Закрыть форму
+      use(xlink:href="#icon-close")
+
+  form(action="https://echo.htmlacademy.ru" method="post").contact-us__form
+    p.contact-us__wrapper
+      label(for="contact-us__name").contact-us__label Ваше имя:
+      input.contact-us__input#contact-us__name(type="text", placeholder="Имя Фамилия", name="name")
+    p.contact-us__wrapper
+      label(for="contact-us__email").contact-us__label Ваш e-mail:
+      input.contact-us__input#contact-us__email(type="email", placeholder="email@example.com", name="email")
+    p.contact-us__wrapper
+      label(for="contact-us__text").contact-us__label Текст письма:
+      textarea.contact-us__input#contact-us__text(placeholder="В свободной форме", name="letter")
+
+    button(type='submit').contact-us__submit.button Отправить
+

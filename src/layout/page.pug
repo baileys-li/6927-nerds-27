@@ -1,0 +1,29 @@
+block variables
+  - var title =  "HTML Academy: Нёрдс";
+  - var currentPage;
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    //- meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title= title
+    link(rel="stylesheet", href="css/normalizemin.css")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic", rel="stylesheet")
+    link(rel="stylesheet", href="css/stylemin.css")
+  body
+    include ../sprite.svg
+    include ../includes/header.pug
+
+    main.page-main
+      h1.visually-hidden Веб-студия «Нёрдс»
+      block content
+
+      include ../includes/contacts.pug
+
+    include ../includes/footer.pug
+    include ../includes/contact-us.pug
+
+    script(src="js/script--min.js")
+    script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcCEBlitoLnrG55D-iXgCTNmKfcPyvCME&callback=initMap")

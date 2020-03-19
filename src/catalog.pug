@@ -1,0 +1,135 @@
+extends layout/page
+
+
+block variables
+  - var title =  "Магазин готовых шаблонов"
+  - var currentPage = "catalog.html"
+
+  mixin makeChoice(type, name, mod, label, className, isChecked = false)
+    li
+      if isChecked
+        input(type=type, name=name, class=className+"__choice", id=className+"__choice--"+mod, value= mod, checked).visually-hidden
+      else
+        input(type=type, name=name, class=className+"__choice", id=className+"__choice--"+mod, value=mod).visually-hidden
+
+      label(for=className + "__choice--" + mod class= className + "__label "+className+"__label--"+type)= label
+
+  mixin makeTemplate(name, description, price, customPath = false, link = false)
+    if !customPath
+      -var customPath = name.toLowerCase()
+
+    li
+      figure(tabindex="0").template
+        img(src="img/templates/"+ customPath +".jpg", alt="Скриншот шаблона "+name width="360" height="576")
+        figcaption.template__info
+          h4.template__title
+            if link
+              a(href=link, target="_blank")= name
+            else
+              a= name
+          p.template__desc= description
+          button.button= price +"₽"
+
+
+
+block content
+  section.catalog
+    h2.catalog__title.title Магазин готовых шаблонов
+
+    .catalog__wrapper.container
+
+      form(action="#" method="get").catalog__filters
+
+        fieldset.filter.filter--cost
+          legend.filter__title.title--small  Стоимость:
+          .price__range
+            svg(height="22", width="222", viewBox="0 0 222 22", xmlns="http://www.w3.org/2000/svg")
+              line(stroke-width="2", x1="10", y1="10", x2="212", y2="10", stroke="#D7DCDE")#price__track
+              line(stroke-width="2", x1="10", y1="10", x2="159", y2="10", stroke="#00CA74")#price__track--selected
+
+              symbol(viewBox="0 0 20 22")#price__thumb
+                circle(cx="10", cy="12", r="10", fill="rgba(171, 171, 171, 0.3)")
+                circle(cx="10", cy="10", r="10", fill="white")
+                circle(cx="10", cy="10", r="2", fill="#ABABAB")
+
+              g(role="button", aria-labelledby="price--min__title", tabindex="0").price__thumb
+                title#price--min__title Минимальная цена
+                use(xlink:href="#price__thumb", x="0", y="0", width="20", height="22")#price--min
+              g(role="button", aria-labelledby="price--max__title", tabindex="0").price__thumb
+                title#price--max__title Максимальная цена
+                use(xlink:href="#price__thumb", x="149", y="0", width="20", height="22")#price--max
+
+          .price__labels
+            label.price__label От
+              input.price__number(type="number", value="0", min="0", max="20000", step="100", name="price__from")#price__output--min
+            label.price__label До
+              input.price__number(type="number", value="15000", min="0", max="20000", step="100", name="price__to")#price__output--max
+
+        fieldset.filter.filter--grid
+          legend.filter__title.title--small  Сетка:
+          ul.filter__list
+            +makeChoice("radio", "grid", "adaptive", "Адаптивная", "filter", true)
+            +makeChoice("radio", "grid", "fixed", "Фиксированная", "filter")
+            +makeChoice("radio", "grid", "responsive", "Резиновая", "filter")
+
+        fieldset.filter.filter--feature
+          legend.filter__title.title--small  Особенности:
+
+          ul.filter__list
+            +makeChoice("checkbox", "feature", "slider", "Слайдер", "filter", true)
+            +makeChoice("checkbox", "feature", "advantages", "Блок преимуществ", "filter")
+            +makeChoice("checkbox", "feature", "news", "Новости", "filter", true)
+            +makeChoice("checkbox", "feature", "gallery", "Галерея", "filter")
+            +makeChoice("checkbox", "feature", "cart", "Корзина", "filter")
+
+        button(type="submit").button.button--grey Показать
+
+      .catalog__main
+        form(action="https://echo.htmlacademy.ru" method="get").catalog__sorts.sort
+
+          h4.sort__title.title--small Сортировать:
+
+          ul.sort__list.sort__list--type
+            +makeChoice("radio", "type", "price", "По цене", "sort", true)
+            +makeChoice("radio", "type", "type", "По типу", "sort")
+            +makeChoice("radio", "type", "name", "По названию", "sort")
+
+          ul.sort__list.sort__list--order
+            li
+              input(type="radio" name="order" class="sort__choice" id="sort__choice--down" checked).visually-hidden
+              label(for="sort__choice--down").sort__label.sort__label--down
+                svg(role="img", focusable="false", aria-labelledby="icon-triangle__title--down", width="11", height="10").icon
+                  title#icon-triangle__title--down По убыванию
+                  use(xlink:href="#icon-triangle")
+            li
+              input(type="radio" name="order" class="sort__choice" id="sort__choice--up").visually-hidden
+              label(for="sort__choice--up").sort__label.sort__label--up
+                svg(role="img", focusable="false", aria-labelledby="icon-triangle__title--up", width="11", height="10").icon
+                  title#icon-triangle__title--up По возрастанию
+                  use(xlink:href="#icon-triangle")
+
+
+        ul.catalog__list
+          +makeTemplate("Sedona", "Информационный сайт для туристов", "9 900")
+          +makeTemplate("Pink App", "Продуктовый лендинг приложения для iOS и Android", "9 900", "pink")
+          +makeTemplate("Barbershop", "Сайт салона красоты. Для мужчин, да.", "9 900")
+          +makeTemplate("Mishka", "Интернет-магазин вязаных игрушек", "9 900")
+          +makeTemplate("A Plus", "Лендинг курсов повышения квалификации", "9 900", "aplus")
+          +makeTemplate("Кваст", "Промо-сайт производителя крафтового кваса", "9 900", "kvast", "https://baileys-li.github.io/Kvast/")
+
+        ul.catalog__pagination.pagination
+          //- li.pagination__prev
+          //-   button(disabled).button.button--grey Предыдущая
+          li
+            ol.pagination__pages
+              li
+                a.pagination__page.button.button--grey Перейти
+              li
+                a(href="/2").pagination__page.button.button--grey Перейти
+              li
+                a(href="/3").pagination__page.button.button--grey Перейти
+
+          li.pagination__next
+            button.button.button--grey Следующая
+
+

@@ -1,0 +1,53 @@
+.page-header
+  padding: 49px 0 0 // 18px
+
+  background: $another-bg
+  &__logo
+    &:hover,
+    &:focus
+      opacity: 0.8
+    &:active
+      opacity: 0.3
+.main-nav
+  display: flex
+  justify-content: space-between
+
+  // position: sticky
+  // top: 0
+  // z-index: 50
+
+.site-list,
+.user-list
+  display: flex
+  flex-wrap: wrap
+  margin: 32px 0 0
+  padding: 0
+
+  list-style: none
+  &__item,
+  &__item
+    margin-right: 46px
+    margin-bottom: 10px
+
+    font-weight: 500
+    font-size: 16px
+    line-height: 1
+    text-transform: uppercase
+    &:last-child
+      margin-right: 0
+    & a:not([href]),
+    &.active
+      padding-bottom: 8px
+      border-bottom: 2px solid $accent-color
+
+.site-list
+  max-width: 50%
+  margin-left: 202px
+  margin-right: auto
+
+.user-list
+  max-width: 22%
+  &__item .icon
+    margin-right: 26px
+
+    fill: #a6a6aa
